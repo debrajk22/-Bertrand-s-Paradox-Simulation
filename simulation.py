@@ -41,9 +41,9 @@ def bertrands_paradox_distance_of_midpt_from_centre(num_trials): # code for the 
         distance = math.sqrt(point[0]**2 + point[1]**2)
         if distance < 0.5:
             greater_count += 1
-        if distance < 0.5 and i % 150 == 0:
+        if distance < 0.5 and i % 1500 == 0:
             inside_points.append(point)
-        elif i % 150 == 0:
+        elif i % 1500 == 0:
             outside_points.append(point)
 
     probability = greater_count / num_trials
@@ -124,13 +124,13 @@ def plot_chords(chords, message):
     plt.show()
 
 
-num_trials = 100000
+num_trials = 1000000
 chords_actual = bertrands_paradox_actual(num_trials)
 inside_points, outside_points = bertrands_paradox_distance_of_midpt_from_centre(num_trials)
 chords_fixing = bertrands_paradox_fixing_one_point(num_trials)
 chords_parallel = bertrands_paradox_taking_parallel_lines(num_trials)
 
-plot_chords(chords_actual[::200], "Actual chords")  # Plot every 200th chord
+plot_chords(chords_actual[::2000], "Actual chords")  # Plot every 200th chord
 plot_midpoint(inside_points, outside_points)
-plot_chords(chords_fixing[::200], "Fixed one point")
-plot_chords(chords_parallel[::200], "Taking parallel chords")
+plot_chords(chords_fixing[::2000], "Fixed one point")
+plot_chords(chords_parallel[::2000], "Taking parallel chords")
