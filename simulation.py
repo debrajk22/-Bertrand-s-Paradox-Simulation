@@ -70,9 +70,6 @@ def plot_midpoint(inside_points, outside_points):
     plt.ylabel('Y')
     plt.legend()
 
-    plt.show()
-
-
 def bertrands_paradox_fixing_one_point(num_trials): # code for fixing one point and varying the other
     chords = []
     greater_count = 0
@@ -121,8 +118,6 @@ def plot_chords(chords, message):
     plt.title(message)
     plt.xlabel('X')
     plt.ylabel('Y')
-    plt.show()
-
 
 num_trials = 1000000
 chords_actual = bertrands_paradox_actual(num_trials)
@@ -130,7 +125,9 @@ inside_points, outside_points = bertrands_paradox_distance_of_midpt_from_centre(
 chords_fixing = bertrands_paradox_fixing_one_point(num_trials)
 chords_parallel = bertrands_paradox_taking_parallel_lines(num_trials)
 
-plot_chords(chords_actual[::2000], "Actual chords")  # Plot every 200th chord
+plot_chords(chords_actual[::2000], "Actual chords")  # Plot every 2000th chord
 plot_midpoint(inside_points, outside_points)
 plot_chords(chords_fixing[::2000], "Fixed one point")
 plot_chords(chords_parallel[::2000], "Taking parallel chords")
+
+plt.show()
