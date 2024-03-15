@@ -1,7 +1,9 @@
 # Bertrand's Paradox Simulation
-This repository contains bertrands_paradox.ipynb Jupyter notebook that samples random objects to explore Bertrand's Paradox.
+This repository contains simulation.py python file that samples random objects to explore Bertrand's Paradox.
 The simulation takes into account *1 million* random cases to calculate the required probabilities.
 We consider a unit circle (circle of radius 1) and an inscribed equilateral triangle of side length sqrt(3) for simulating the probabilities.
+
+The code uses math, random and matplotlib labraries.
 
 **The notebook simulates 4 functions -**
 1. **bertrands_paradox_actual function:** simulates the actual problem statement of the paradox that is length of the chord being greater than the side of the equilateral triangle. This simulation gives a probability of around **0.33** for the chord being greater than the side of inscribed triangle.
